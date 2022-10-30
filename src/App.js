@@ -6,7 +6,6 @@ import TextForm from './components/TextForm';
 import {useState} from 'react'
 
 import React from 'react';
-import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import ErrorPage from './components/ErrorPage';
 
 
@@ -43,14 +42,12 @@ function App() {
   
 
   return (
-        <Router>
+    <>
           <Navbar title="TextUtils" aboutText="About" mode={mode} toggleMode={toggleMode}/>
-            <Routes>
-              <Route path='/' element={<TextForm mode={toggleMode}/>} />
-              <Route path='/about' element={<About />} />
-              <Route path='*' element={ErrorPage}/>
-            </Routes>
-        </Router>
+          <TextForm mode={toggleMode}/>
+          <About />
+    </>
+            
   );
 }
 
